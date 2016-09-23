@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?scenebuilder-preview-i18n-resource ../bundle/base.properties?>
+<?scenebuilder-stylesheet ../css/standard.css?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="533.0" prefWidth="807.0" xmlns="http://javafx.com/javafx/8.0.66" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.starterkit.javafx.controller.UserProfilesSearchController">
+  <Label layoutX="14.0" layoutY="14.0" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="474.0" styleClass="formTitle" text="%label.formTitle" />
+  <GridPane hgap="10.0" layoutX="14.0" layoutY="60.0" vgap="10.0">
+    <columnConstraints>
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="150.0" />
+         <ColumnConstraints />
+    </columnConstraints>
+    <rowConstraints>
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    </rowConstraints>
+    <children>
+      <Label text="%label.userId" />
+      <TextField fx:id="userIdField" maxWidth="1.7976931348623157E308" prefHeight="31.0" prefWidth="133.0" GridPane.columnIndex="1" />
+      <Label text="%label.firstName" GridPane.rowIndex="1" />
+      <TextField fx:id="firstNameField" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+      <Label text="%label.lastName" GridPane.rowIndex="2" />
+      <TextField fx:id="lastNameField" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+    </children>
+  </GridPane>
+  <Button fx:id="searchProfileButton" defaultButton="true" layoutX="394.0" layoutY="60.0" mnemonicParsing="false" onAction="#searchButtonAction" text="%button.search" />
+  <TableView fx:id="resultTable" layoutX="14.0" layoutY="219.0" prefHeight="211.0" prefWidth="740.0">
+    <placeholder>
+      <Label text="%table.emptyText" />
+    </placeholder>
+    <columns>
+      <TableColumn fx:id="userIdColumn" minWidth="195.0" prefWidth="195.0" text="%column.userId" />
+      <TableColumn fx:id="firstNameColumn" minWidth="120.0" prefWidth="195.0" text="%column.firstName" />
+      <TableColumn fx:id="lastNameColumn" minWidth="120.0" prefWidth="161.0" text="%column.lastName" />
+      <TableColumn fx:id="emailColumn" minWidth="17.0" prefWidth="184.0" text="%column.email" />
+    </columns>
+  </TableView>
+   <Button fx:id="deleteProfileButton" defaultButton="true" layoutX="414.0" layoutY="472.0" mnemonicParsing="false" onAction="#deleteProfileButtonAction" text="%button.deleteProfile" />
+   <Button fx:id="editProfileButton" defaultButton="true" layoutX="606.0" layoutY="472.0" mnemonicParsing="false" onAction="#editProfileButtonAction" text="%button.editProfile" />
+</AnchorPane>
